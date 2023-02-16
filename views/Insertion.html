@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insertion</title>
+    <link rel="stylesheet" href="../static/Complexity.css">
+    <link rel="stylesheet" href="../static/prism.css">
+    <link rel="icon" href="../favicon.ico">
+    <style>
+        .container {
+            height: 96%
+        }
+        .codezone
+        {
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar" class="nav-fixed">
+        <div class="logo">
+            <img src="../static/logo3.png" alt="">
+            <p>AlgoVizz</p>
+        </div>
+        <div id="options">
+            <ul>
+                <li class="Homebtn"><a  href="Home.html">Home</a></li>
+                <li><a href="Bubble.html">Bubble</a></li>
+                <li><a href="Selection.html">Selection</a></li>
+                <li><a href="Insertion.html">Insertion</a></li>
+                <li><a href="Merge.html">Merge</a></li>
+                <li><a href="Quick.html">Quick</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="sortdetails">
+        <div class="main">
+            <div class="details">
+                <header>How Insertion Sort works</header>
+                <p class="content">Insertion Sort is a simple sorting algorithm that builds the final sorted list one
+                    item at a time. The list is virtually split into a sorted and an unsorted part. Values from the
+                    unsorted part are picked and placed at the correct position in the sorted part</p>
+                <header>Performence</header>
+                <div class="complexity">
+                    <p>Assuming N is the size of array,</p>
+                    <div class="perform">
+                        <div class="per1">
+                            <p>Worst time complexity</p>
+                            <p>Average time complexity</p>
+                            <p>Best time complexity</p>
+                            <p>Worst space complexity</p>
+                        </div>
+                        <div class="per2">
+                            <p>O(<span>N<sup>2</sup></span>)</p>
+                            <p>θ(<span>N<sup>2</sup></span>)</p>
+                            <p>θ(<span>N</span>)</p>
+                            <p>O(<span>1</span>)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="algotype">
+                    <div>
+                        <p>Stable</p>
+                        <img class="type1" src="../static/stable.png" alt="">
+                    </div>
+                    <div>
+                        <p>In-place</p>
+                        <img class="type1" src="../static/stable.png" alt="">
+                    </div>
+                </div>
+                <div class="moredetails">
+                    <a href="https://www.geeksforgeeks.org/insertion-sort/" target=”_blank”> Click here for more details
+                    </a>
+                </div>
+            </div>
+
+            <!-- codesec -->
+            <div class="codezone">
+                <span class="codehead">JAVA Code</span>
+                <div class="container">
+                    <div class="code-wrapper">
+                        <pre>
+                        <code class="language-java">
+            void insertionSort(int[] arr) {
+
+                // Elements from 0 to i - 1 are sorted
+                for (int i = 1; i < arr.length; i++) {
+            
+                    int key = arr[i];
+                    int j = i - 1;
+            
+                    // Locate position of key to insert in the sorted region
+                    while (j >= 0 && arr[j] > key) {
+                        arr[j + 1] = arr[j];
+                        j -= 1;
+                    }
+                    arr[j + 1] = key;
+                }
+            }
+            
+            
+                        </code>
+                    </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <script src="../static/prism.js"></script>
+</body>
+
+</html>

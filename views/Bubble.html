@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble</title>
+    <link rel="stylesheet" href="../static/Complexity.css">
+    <link rel="stylesheet" href="../static/prism.css">
+    <link rel="icon" href="../favicon.ico">
+    <style>
+        .container {
+            height: 96%
+        }
+        .codezone
+        {
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar" class="nav-fixed">
+        <div class="logo">
+            <img src="../static/logo3.png" alt="">
+            <p>AlgoVizz</p>
+        </div>
+        <div id="options">
+            <ul>
+                <li class="Homebtn"><a  href="Home.html">Home</a></li>
+                <li><a href="Bubble.html">Bubble</a></li>
+                <li><a href="Selection.html">Selection</a></li>
+                <li><a href="Insertion.html">Insertion</a></li>
+                <li><a href="Merge.html">Merge</a></li>
+                <li><a href="Quick.html">Quick</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="sortdetails">
+        <div class="main">
+            <div class="details">
+                <header>How Bubble Sort works</header>
+                <p class="content">Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping
+                    adjacent elements if
+                    they
+                    are in the wrong order. This procedure is repeated until no swaps are required, indicating that the
+                    list
+                    has been sorted.</p>
+                <header>Performence</header>
+                <div class="complexity">
+                    <p>Assuming N is the size of array,</p>
+                    <div class="perform">
+                        <div class="per1">
+                            <p>Worst time complexity</p>
+                            <p>Average time complexity</p>
+                            <p>Best time complexity</p>
+                            <p>Worst space complexity</p>
+                        </div>
+                        <div class="per2">
+                            <p>O(<span>N<sup>2</sup></span>)</p>
+                            <p>θ(<span>N<sup>2</sup></span>)</p>
+                            <p>Ω(<span>N</span>)</p>
+                            <p>O(<span>1</span>)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="algotype">
+                    <div>
+                        <p>stable</p>
+                        <img class="type1" src="../static/stable.png" alt="">
+                    </div>
+                    <div>
+                        <p>In-place</p>
+                        <img class="type1" src="../static/stable.png" alt="">
+                    </div>
+                </div>
+                <div class="moredetails">
+                    <a href="https://www.geeksforgeeks.org/bubble-sort/" target=”_blank” > Click here for more details </a>
+                </div>
+            </div>
+
+            <!-- codesec -->
+            <div class="codezone">
+                <span class="codehead">JAVA Code</span>
+                <div class="container">
+                    <div class="code-wrapper">
+                        <pre>
+                        <code class="language-java">
+        void swap(int[] arr, int i, int j) {
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+
+        void bubbleSort(int[] arr) {
+            
+            // Loop in the range of unsorted elements
+            for (int i = arr.length - 1; i >= 0; i--) {
+                boolean swapped = true;
+                
+                // Bubble largest element to the end
+                for (int j = 0; j < i; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        swap(arr, j, j + 1);
+                        swapped = false;
+                    }
+                }
+                
+                // Array is already sorted as there are no swaps in this iteration
+                if (swapped) {
+                    break;
+                }
+            }
+        }
+                        </code>
+                    </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <script src="../static/prism.js"></script>
+</body>
+
+</html>

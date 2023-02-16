@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge</title>
+    <link rel="stylesheet" href="../static/Complexity.css">
+    <link rel="stylesheet" href="../static/prism.css">
+    <link rel="icon" href="../favicon.ico">
+    <style>
+        .per1 {
+            margin-right: 100px;
+        }
+
+        .per2 p {
+            width: 80px;
+        }
+        .container {
+            height: 96%
+        }
+        .codezone
+        {
+            height: 440px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar" class="nav-fixed">
+        <div class="logo">
+            <img src="../static/logo3.png" alt="">
+            <p>AlgoVizz</p>
+        </div>
+        <div id="options">
+            <ul>
+                <li class="Homebtn"><a href="Home.html">Home</a></li>
+                <li><a href="Bubble.html">Bubble</a></li>
+                <li><a href="Selection.html">Selection</a></li>
+                <li><a href="Insertion.html">Insertion</a></li>
+                <li><a href="Merge.html">Merge</a></li>
+                <li><a href="Quick.html">Quick</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="sortdetails">
+        <div class="main">
+            <div class="details">
+                <header>How Merge Sort works</header>
+                <p class="content">Merge Sort is a Divide and Conquer algorithm. It divides the input array into two
+                    halves, calls itself for the two halves, and then merges the two sorted halves. The merge() function
+                    is used for merging two halves. The merge(arr, l, m, r) is a key process that assumes that arr[l..m]
+                    and arr[m+1..r] are sorted and merges the two sorted subarrays into one</p>
+                <header>Performence</header>
+                <div class="complexity">
+                    <p>Assuming N is the size of array,</p>
+                    <div class="perform">
+                        <div class="per1">
+                            <p>Worst time complexity</p>
+                            <p>Average time complexity</p>
+                            <p>Best time complexity</p>
+                            <p>Worst space complexity</p>
+                        </div>
+                        <div class="per2">
+                            <p>O(<span>NlogN</span>)</p>
+                            <p>θ(<span>NlogN</span>)</p>
+                            <p>Ω(<span>NlogN</span>)</p>
+                            <p>O(<span>N</span>)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="algotype">
+                    <div>
+                        <p>Stable</p>
+                        <img class="type1" src="../static/stable.png" alt="">
+                    </div>
+                    <div>
+                        <p>In-place</p>
+                        <img class="type2" src="../static/unstable.png" alt="">
+                    </div>
+                </div>
+                <div class="moredetails">
+                    <a href="https://www.geeksforgeeks.org/merge-sort/" target=”_blank”> Click here for more details
+                    </a>
+                </div>
+            </div>
+
+            <!-- codesec -->
+            <div class="codezone">
+                <span class="codehead">JAVA Code</span>
+                <div class="container">
+                    <div class="code-wrapper">
+                        <pre>
+                        <code class="language-java">
+            /* Merges two subarrays of arr[]. First subarray is arr[l..m]
+            * Second subarray is arr[m+1..r] */
+            void merge(int[] arr, int left, int mid, int right) {
+                // Find sizes of two subarrays to be merged
+                int n1 = mid - left + 1;
+                int n2 = right - mid;
+            
+                // Create temp arrays
+                int[] leftArray = new int[n1];
+                int[] rightArray = new int[n2];
+            
+                // Copy data to temp arrays
+                for (int i = 0; i < n1; i++) {
+                    leftArray[i] = arr[left + i];
+                }
+            
+                for (int j = 0; j < n2; j++) {
+                    rightArray[j] = arr[mid + 1 + j];
+                }
+            
+                // Initial indexes of first and second subarrays
+                int i = 0, j = 0;
+            
+                // Initial index of merged subarray array
+                int k = left;
+                // Merge the arrays
+                while (i < n1 && j < n2) {
+                    if (leftArray[i] <= rightArray[j]) {
+                        arr[k++] = leftArray[i++];
+                    } else {
+                        arr[k++] = rightArray[j++];
+                    }
+                }
+            
+                // Copy remaining elements of leftArray if any
+                while (i < n1) {
+                    arr[k++] = leftArray[i++];
+                }
+            
+                // Copy remaining elements of rightArray if any
+                while (j < n2) {
+                    arr[k++] = rightArray[j++];
+                }
+            }
+            
+            // Main function that sorts arr[l..r] using merge()
+            void mergeSortHelper(int[] arr, int left, int right) {
+                if (left < right) {
+                    // Find the middle point
+                    int mid = (left + right) / 2;
+            
+                    // Sort first and second halves
+                    mergeSortHelper(arr, left, mid);
+                    mergeSortHelper(arr, mid + 1, right);
+            
+                    // Merge the sorted halves
+                    merge(arr, left, mid, right);
+                }
+            }
+            
+            void mergeSort(int[] arr) {
+                mergeSortHelper(arr, 0, arr.length - 1);
+            }
+            
+            
+                        </code>
+                    </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <script src="../static/prism.js"></script>
+</body>
+
+</html>

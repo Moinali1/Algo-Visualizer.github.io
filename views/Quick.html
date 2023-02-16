@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick</title>
+    <link rel="stylesheet" href="../static/Complexity.css">
+    <link rel="stylesheet" href="../static/prism.css">
+    <link rel="icon" href="../favicon.ico">
+    <style>
+        .per1 {
+            margin-right: 100px;
+        }
+
+        .per2 p {
+            width: 80px;
+        }
+
+        .container {
+            height: 96%
+        }
+        .codezone
+        {
+            height: 440px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar" class="nav-fixed">
+        <div class="logo">
+            <img src="../static/logo3.png" alt="">
+            <p>AlgoVizz</p>
+        </div>
+        <div id="options">
+            <ul>
+                <li class="Homebtn"><a href="Home.html">Home</a></li>
+                <li><a href="Bubble.html">Bubble</a></li>
+                <li><a href="Selection.html">Selection</a></li>
+                <li><a href="Insertion.html">Insertion</a></li>
+                <li><a href="Merge.html">Merge</a></li>
+                <li><a href="Quick.html">Quick</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="sortdetails">
+        <div class="main">
+            <div class="details">
+                <header>How Quick Sort works</header>
+                <p class="content">Quick Sort is a Divide and Conquer algorithm. It picks an element as pivot and
+                    partitions the given array around the picked pivot. There are many different versions of Quick Sort
+                    that pick pivot in different ways.</p>
+                <header>Performence</header>
+                <div class="complexity">
+                    <p>Assuming N is the size of array,</p>
+                    <div class="perform">
+                        <div class="per1">
+                            <p>Worst time complexity</p>
+                            <p>Average time complexity</p>
+                            <p>Best time complexity</p>
+                            <p>Worst space complexity</p>
+                        </div>
+                        <div class="per2">
+                            <p>O(<span>N<sup>2</sup></span>)</p>
+                            <p>θ(<span>NlogN</span>)</p>
+                            <p>θ(<span>N</span>)</p>
+                            <p>O(<span>N</span>)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="algotype">
+                    <div>
+                        <p>Stable</p>
+                        <img class="type2" src="../static/unstable.png" alt="">
+                    </div>
+                    <div>
+                        <p>In-place</p>
+                        <img class="type1" src="../static/stable.png" alt="">
+                    </div>
+                </div>
+                <div class="moredetails">
+                    <a href="https://www.geeksforgeeks.org/quick-sort/" target=”_blank”> Click here for more details
+                    </a>
+                </div>
+            </div>
+
+            <!-- codesec -->
+            <div class="codezone">
+                <span class="codehead">JAVA Code</span>
+                <div class="container">
+                    <div class="code-wrapper">
+                        <pre>
+                        <code class="language-java">
+            void swap(int[] arr, int i, int j) {
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+            
+            int partition(int[] arr, int low, int high) {
+                int pivot = arr[high];
+                int i = low - 1; // index of smaller element 
+                for (int j = low; j < high; j++) {
+                    // If current element is smaller than the pivot 
+                    if (arr[j] < pivot) {
+                        i++;
+                        swap(arr, i, j);
+                    }
+                }
+                swap(arr, i + 1, high);
+                return i + 1;
+            }
+            
+            /* The main function that implements QuickSort() 
+                arr[] --> Array to be sorted, 
+                low  --> Starting index, 
+                high  --> Ending index */
+            void quickSortHelper(int[] arr, int low, int high) {
+                if (low < high) { 
+                    /* pi is partitioning index, arr[pi] is  
+                        now at right place */
+                    int pi = partition(arr, low, high);
+                    // Recursively sort elements before 
+                    // partition and after partition 
+                    quickSortHelper(arr, low, pi - 1);
+                    quickSortHelper(arr, pi + 1, high);
+                }
+            }
+            
+            void quickSort(int[] arr) {
+                quickSortHelper(arr, 0, arr.length - 1);
+            }
+            
+                        </code>
+                    </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <script src="../static/prism.js"></script>
+</body>
+
+</html>
