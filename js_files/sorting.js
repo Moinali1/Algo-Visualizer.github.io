@@ -8,6 +8,37 @@ function swap(el1, el2) {
     
 }
 
+function deletelegends() {
+    const legends = document.querySelector(".legends");
+    legends.innerHTML = '';
+}
+
+function createLegends(details)
+{
+    deletelegends();
+
+    for(let i=0;i<details.length;i=i+2)
+    {
+    const Elegends= document.querySelector(".legends");
+    const Eleg = document.createElement("div");
+    const Elcolor = document.createElement("div");
+    const Elegwork = document.createElement("div");
+
+    const node = document.createTextNode(details[i]);
+    Elegwork.appendChild(node);
+    Elcolor.style.backgroundColor=details[i+1];
+
+    Eleg.classList.add('leg');
+    Elcolor.classList.add('lcolor');
+    Elegwork.classList.add('legwork');
+    Elegwork.classList.add('legwork1');
+    
+    Eleg.appendChild(Elcolor);
+    Eleg.appendChild(Elegwork);
+    Elegends.appendChild(Eleg);
+    }
+}
+
 
 function disableSortingBtn(){
     document.querySelector(".bubbleSort").disabled = true;
@@ -45,11 +76,12 @@ function enableNewArrayBtn(){
     document.querySelector(".newArray").disabled = false;
 }
 
-
+// let pauseElement= document.getElementById("pause");
+// var timeoutId=0;
 function waitforme(milisec) { 
     return new Promise(resolve => { 
-        setTimeout(() => { resolve('') }, milisec); 
-    }) 
+       timeoutId= setTimeout(() => { resolve('') }, milisec); 
+    }) ;
 }
 
 
@@ -63,13 +95,32 @@ arraySize.addEventListener('input', function(){
 
 let delay = 260;
 
+let pauseDelay=800;
+
+
+// pauseElement.addEventListener("change",()=>{
+//     console.log("In pause");
+//     if(pauseElement.checked == true)
+//     {
+//     console.log("In pause if");
+//     pauseDelay=8000;
+//     delay = pauseDelay - parseInt(delayElement.value);
+//     }
+//     else
+//     {
+//     console.log("In pause else");
+//     console.log(timeoutId);
+//     pauseDelay=800;
+//     delay = pauseDelay - parseInt(delayElement.value);
+//     }
+// });
+
 
 let delayElement = document.querySelector('#speed_input');
 
-
 delayElement.addEventListener('input', function(){
     console.log(delayElement.value, typeof(delayElement.value));
-    delay = 800 - parseInt(delayElement.value);
+    delay = pauseDelay - parseInt(delayElement.value);
 });
 
 
@@ -122,6 +173,9 @@ reset.addEventListener("click",function(){
     enableSortingBtn();
     enableSizeSlider();
     deleteChild();
+
+    deletelegends();
+
     newArray.disabled=false;
    
     const bars = document.querySelector("#bars");

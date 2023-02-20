@@ -38,5 +38,9 @@ selectionSortbtn.addEventListener('click', async function(){
     disableSortingBtn();
     disableSizeSlider();
     disableNewArrayBtn();
+
+    let legdetails=["Element under check","red","Correct position to swap","#5aeb5a","Current minimum element","yellow","Sorted element","green","Unsorted element","rgb(38 108 162)"]
+    createLegends(legdetails);
+
     await selection();
 });

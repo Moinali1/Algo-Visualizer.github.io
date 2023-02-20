@@ -17,7 +17,7 @@ async function partitionLomuto(ele, l, r){
             swap(ele[i], ele[j]);
             // color 
             ele[i].style.background = 'orange';
-            if(i != j) ele[j].style.background = 'orange';
+            // if(i != j) ele[j].style.background = 'orange';
             // pauseChamp
             await waitforme(delay);
         }
@@ -41,7 +41,7 @@ async function partitionLomuto(ele, l, r){
     // color
     for(let k = 0; k < ele.length; k++){
         if(ele[k].style.background != 'green')
-            ele[k].style.background = 'cyan';
+            ele[k].style.background = 'rgb(38 108 162)';//dark blue
     }
 
     return i;
@@ -71,5 +71,9 @@ quickSortbtn.addEventListener('click', async function(){
     disableSortingBtn();
     disableSizeSlider();
     disableNewArrayBtn();
+
+    let legdetails=["Partition Element","red","Element smaller then partion element","orange","Element Greater then the parition element","pink","Element under check","yellow","Sorted elements","green","Unsorted element","rgb(38 108 162)"]
+    createLegends(legdetails);
+
     await quickSort(ele, l, r);
 });

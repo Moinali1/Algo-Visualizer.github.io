@@ -26,5 +26,22 @@ bubSortbtn.addEventListener('click', async function(){
     disableSortingBtn();
     disableSizeSlider();
     disableNewArrayBtn();
+
+    let legdetails=["Unsorted element","rgb(38 108 162)","Elements under comparision","rgb(159 213 255)","Sorted element","green"]
+    createLegends(legdetails);
+
     await bubble();
 });
+
+
+
+// const bars = document.querySelector("#bars");
+
+//     for (let i = 0; i < noOfBars; i++) {
+//             const bar = document.createElement("div");
+//         bar.style.height = `${array[i]*1.2}px`;
+//         bar.classList.add('bar');
+//         bar.classList.add('flex-item');
+//         bar.classList.add(`barNo${i}`);
+//         bars.appendChild(bar);
+//     }

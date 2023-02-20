@@ -34,6 +34,10 @@ inSortbtn.addEventListener('click', async function(){
     disableSortingBtn();
     disableSizeSlider();
     disableNewArrayBtn();
+
+    let legdetails=["Element under check","red","Element to be inserted on its correct position","rgb(159 213 255)","Sorted elements","green","Unsorted element","rgb(38 108 162)"]
+    createLegends(legdetails);
+
     await insertion();
 });
 

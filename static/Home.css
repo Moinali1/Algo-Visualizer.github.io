@@ -419,6 +419,7 @@ button[disabled] {
 .v22 {
     display: flex;
     width: 858px;
+    /* width: 1242px; */
     margin: auto;
 }
 
@@ -433,8 +434,6 @@ button[disabled] {
     font-size: 18px;
     width: 70px;
 }
-
-
 
 .flex-container {
     margin-top: 41px;
@@ -497,6 +496,37 @@ a {
 
 .endbox {
     width: 15%;
-    color: aliceblue;
+    /* color: aliceblue; */
     margin: auto;
+}
+.legends
+{
+    width: 74%;
+    margin-left: 314px;
+    background-color: black;
+    box-shadow: 0px 7px 10px rgb(0 0 0 / 50%);
+    border-radius: 15px;
+    height: 60px;
+    color: rgb(255 255 255);
+    padding: 10px;
+    display: flex;
+}
+.leg
+{
+    display: flex;
+    margin-left: 10px;
+    font-size: 14px;
+
+}
+.lcolor
+{
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    margin-top: 2px;
+    background-color: #f9f9f9;
+}
+.legwork
+{
+    height: 12px;
 }
