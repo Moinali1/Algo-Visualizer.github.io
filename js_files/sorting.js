@@ -93,9 +93,9 @@ arraySize.addEventListener('input', function(){
     createNewArray(parseInt(arraySize.value));
 });
 
-let delay = 260;
+let delay = 700;
 
-let pauseDelay=800;
+// let pauseDelay=2000;
 
 
 // pauseElement.addEventListener("change",()=>{
@@ -120,7 +120,7 @@ let delayElement = document.querySelector('#speed_input');
 
 delayElement.addEventListener('input', function(){
     console.log(delayElement.value, typeof(delayElement.value));
-    delay = pauseDelay - parseInt(delayElement.value);
+    delay = 1000 - parseInt(delayElement.value);
 });
 
 

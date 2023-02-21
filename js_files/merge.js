@@ -113,7 +113,7 @@ mergeSortbtn.addEventListener('click', async function(){
     disableSizeSlider();
     disableNewArrayBtn();
 
-    let legdetails=["Left Sorted Array","orange","Right Sorted Array","yellow","Merged sorted part","lightgreen","Sorted elements","green","Unsorted element","rgb(38 108 162)"]
+    let legdetails=["Left Sorted Array","orange","Right Sorted Array","yellow","Merged sorted part","lightgreen","Final sorted elements","green","Unsorted element","rgb(38 108 162)"]
     createLegends(legdetails);
 
     await mergeSort(ele, l, r);

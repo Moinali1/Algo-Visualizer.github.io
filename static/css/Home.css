@@ -119,7 +119,7 @@
 #primary::before {
     position: absolute;
     content: "";
-    background: url("bg1.png") no-repeat center center/cover;
+    background: url("../bg1.png") no-repeat center center/cover;
     height: 650px;
     width: 100%;
     top: 0;
@@ -353,7 +353,7 @@
 
 #headdiv {
 
-    background: url("bg1.png") no-repeat center center/cover;
+    background: url("../bg1.png") no-repeat center center/cover;
     width: 100%;
     height: 59px;
     text-align: center;
@@ -529,4 +529,13 @@ a {
 .legwork
 {
     height: 12px;
+}
+
+.legHeading
+{
+    font-size: 23px;
+    color: aliceblue;
+    text-align: center;
+    margin: auto;
+    text-shadow: 1px 1px 5px #1692ff;
 }
